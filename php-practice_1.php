@@ -106,11 +106,11 @@ hello('渡辺');
 
 function calTaxInPrice($price)
 {
-    $taxInPrice = $price * 1.1;
-    echo $price . '円の商品の税込価格は' . $taxInPrice . '円です。';
+  $taxInPrice = $price * 1.1;
+    return $price . '円の商品の税込価格は' . $taxInPrice . '円です。';
 }
-
-calTaxInPrice(1000);
+$price = 1000;
+echo calTaxInPrice($price);
 
 // Q12 関数とif文
 
