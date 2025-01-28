@@ -28,13 +28,12 @@ echo($message);
 // Q4 条件分岐-1 if文
 
 $device = 'mac';
-if ($device === 'mac') {
-    echo '使用OSは、macです。';
-} if ($device === 'windows') {
-    echo '使用OSは、windowsです。';
+if ($device === 'mac' || $device === 'windows') {
+    echo '使用OSは、' . $device . 'です。';
 } else {
     echo 'どちらでもありません。'; 
 }
+
 
 // Q5 条件分岐-2 三項演算子
 
@@ -94,12 +93,12 @@ else{
 
 function hello($name)
 {
-    echo $name . 'さん、こんにちは。';
+    return $name . 'さん、こんにちは。';
 }
 
-hello('久保');
+echo hello('久保');
 echo "\n"; 
-hello('渡辺'); 
+echo hello('渡辺'); 
 
 
 // Q11 関数-2

@@ -51,11 +51,30 @@ echo '学籍番号' . $people->studentId . '番の生徒は' . $people->studentN
 
 
 // Q4 オブジェクト-2
-echo $people->studentName . 'は' . $people->attend('PHP') . '学籍番号:' . $people->studentId;
+class Student
+{
+    public $studentId;
+    public $studentName;
+
+    public function __construct($id, $name)
+    {
+        $this->studentId = $id;
+        $this->studentName = $name;
+    }
+
+    public function attend($class)
+    {
+        return  $this->studentName . 'は' . $class . 'の授業に参加しました。' . '学籍番号:' . $this->studentId;
+    }
+}
+
+    echo $people->attend('PHP');
 
 // Q5 定義済みクラス
 問題１
-echo date("Y-m-d", strtotime("2025/1/28 -1 months"));
+$date = new DateTime();
+$date->modify('-1 month');
+echo $date->format('Y-m-d');
 
 問題２
 $day = new DateTime('1992-4-25');
@@ -63,4 +82,6 @@ $day2 = new DateTime();
 $interval = $day->diff($day2);
 echo 'あの日から' . $interval->format('%a日') . '経過しました。';
 
+（下記に省略可能）
+echo 'あの日から' . $day->diff($day2)->format('%a日') . '経過しました。';
 ?>
